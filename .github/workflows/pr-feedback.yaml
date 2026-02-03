@@ -1,0 +1,22 @@
+# ⚠️ DEAR STUDENTS, PLEASE DO NOT MODIFY THIS FILE!
+#
+# This workflow provides automated task testing and personalized feedback.
+# Modifying this file might break it.
+#
+# The ONLY thing you may change is the action version below.
+
+name: PR Feedback
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  feedback:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Analyze PR
+      # ⚠️ You may update the version tag (@v1) to use a different release
+      # See available versions: https://github.com/exit0-io/pr-feedback-action/releases
+      uses: exit0-io/pr-feedback-action@v1
