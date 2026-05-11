@@ -11,6 +11,13 @@ sudo apt update
 sudo apt install python3.14-venv python3-pip libgl1
 ```
 
+1. Clone the repository and navigate to the project directory:
+```bash
+git clone https://github.com/alonitac/YoloService.git
+cd YoloService
+```
+
+
 1. Create Python virtual environment (venv) and activate it:
 ```bash
 python3 -m venv .venv
@@ -21,19 +28,13 @@ Python virtual environment is used to isolate project dependencies and ensure th
 
 Your terminal prompt should now indicate that you are in the virtual environment (e.g., `(.venv) ubuntu@hostname:~/$`).
 
-1. Clone the repository and navigate to the project directory:
-```bash
-git clone https://github.com/alonitac/YoloService.git
-cd YoloService
-```
-
-2. Install requirements:
+1. Install requirements:
 ```bash
 pip install -r torch-requirements.txt
 pip install -r requirements.txt
 ```
 
-3. Run the application:
+1. Run the application:
 ```bash
 python app.py
 ```
@@ -62,10 +63,6 @@ The test suite uses `pytest` and FastAPI's built-in test client — no running s
 pytest tests/
 ```
 
-To run tests inside Docker (override the default command):
-```bash
-docker run yolo-service python -m pytest tests/
-```
 
 ## API Endpoints
 
