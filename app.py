@@ -162,6 +162,20 @@ def get_prediction_by_uid(uid: str):
         }
 
 
+@app.get("/prediction/{uid}/image")
+def get_prediction_image(uid: str):
+    """
+    Return the annotated (bounding-box) image for a prediction
+    """
+    with sqlite3.connect(DB_PATH) as conn:
+        row = conn.execute(
+            "SELECT predicted_image FROM prediction_sessions WHERE uid = ?", (uid,)
+        ).fetchone()
+    if not row or not os.path.exists(row[0]):
+        raise HTTPException(status_code=404, detail="Image not found")
+    return FileResponse(row[0])
+
+
 @app.get("/health")
 def health():
     """
