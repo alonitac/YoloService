@@ -28,7 +28,7 @@ if _raw_threshold is not None:
     CONFIDENCE_THRESHOLD = float(_raw_threshold)
     logging.info(f"CONFIDENCE_THRESHOLD set to {CONFIDENCE_THRESHOLD} (from environment)")
 else:
-    CONFIDENCE_THRESHOLD = 0.5
+    CONFIDENCE_THRESHOLD = 0.7
     logging.info(f"CONFIDENCE_THRESHOLD not set, using default: {CONFIDENCE_THRESHOLD}")
 
 UPLOAD_DIR = "uploads/original"
